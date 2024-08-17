@@ -41,7 +41,7 @@ export function InsightDialog() {
 						AI Insight
 					</Typography>
 				</DialogHeader>
-				<DialogBody className="grid place-items-center gap-4 px-16">
+				<DialogBody className="grid place-items-center gap-4 px-4 lg:px-16">
 					{showFinalComponent ? (
 						<TextGenerateEffect words={mockInsight} />
 					) : (
