@@ -35,14 +35,18 @@ const DateRangeSelector: React.FC<DateRangeSelectorProps> = ({
 	};
 
 	return (
-		<form onSubmit={handleSubmit} className="w-[70%]  gap-2 flex">
+		<form
+			onSubmit={handleSubmit}
+			className="w-full lg:w-[70%] gap-2 flex flex-col lg:flex-row mb-4"
+		>
 			<Input
 				label="Initial"
 				crossOrigin={""}
 				type="date"
 				value={startDate}
 				onChange={(e) => setStartDate(e.target.value)}
-				className="h-[3rem] bg-white "
+				size="lg"
+				className="h-[3rem] bg-white"
 			/>
 			<Input
 				label="End"
@@ -50,6 +54,7 @@ const DateRangeSelector: React.FC<DateRangeSelectorProps> = ({
 				type="date"
 				value={endDate}
 				onChange={(e) => setEndDate(e.target.value)}
+				size="lg"
 				className="h-[3rem] bg-white "
 			/>
 			<Button placeholder="apply button" size="md" type="submit" color="blue">

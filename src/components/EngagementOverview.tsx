@@ -1,6 +1,4 @@
 import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { RootState } from "@/store";
 import { AreaChart } from "./charts/AreaChart";
 import {
 	Card,
@@ -9,6 +7,7 @@ import {
 	Typography,
 	Chip,
 } from "@material-tailwind/react";
+import { processEngagementData } from "@/utils/data";
 
 interface EngagementOverviewProps {
 	dateRange: { start: string; end: string };
@@ -28,26 +27,7 @@ const EngagementOverview: React.FC<EngagementOverviewProps> = ({
 	dateRange,
 	data,
 }) => {
-	const { engagementData } = useSelector((state: RootState) => state.analytics);
-
-	const processData = (rawData: any[]): ProcessedEngagementData[] => {
-		return rawData.map((item) => ({
-			date: item.date,
-			uniqueDelivered: item.uniqueDelivered,
-			uniqueOpened: item.uniqueOpened,
-			uniqueClicks: item.uniqueClicks,
-			openRate:
-				item.uniqueDelivered > 0
-					? Math.round((item.uniqueOpened / item.uniqueDelivered) * 100)
-					: 0,
-			clickThroughRate:
-				item.uniqueOpened > 0
-					? Math.round((item.uniqueClicks / item.uniqueOpened) * 100)
-					: 0,
-		}));
-	};
-
-	const processedData = processData(data).filter(
+	const processedData = processEngagementData(data).filter(
 		(item) => item.date >= dateRange.start && item.date <= dateRange.end,
 	);
 

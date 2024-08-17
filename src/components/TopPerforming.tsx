@@ -18,7 +18,6 @@ interface NewsletterEdition {
 
 const TopPerformingEditions: React.FC<TopPerformingEditionsProps> = ({
 	dateRange,
-	data,
 }) => {
 	const { engagementData } = useSelector((state: RootState) => state.analytics);
 

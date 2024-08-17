@@ -30,7 +30,7 @@ const Dashboard: React.FC = () => {
 
 	return (
 		<div>
-			<span className="flex w-full h-[3rem] justify-between mb-4">
+			<span className="flex w-full h-fit lg:h-[3rem] justify-between mb-4 flex-col lg:flex-row ">
 				<DateRangeSelector onDateRangeChange={setDateRange} />
 				<InsightDialog />
 			</span>

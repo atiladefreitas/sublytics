@@ -11,6 +11,7 @@ import {
 import { TextGenerateEffect } from "../ui/text-generate-effect";
 import { mockInsight } from "@/utils/mock";
 import { Sparkles } from "@/assets/icons/sparkles";
+import { SparklesIcon } from "@heroicons/react/24/solid";
 
 export function InsightDialog() {
 	const [open, setOpen] = useState(false);
@@ -30,13 +31,13 @@ export function InsightDialog() {
 				className="flex items-center gap-2"
 				size="md"
 			>
-				<Sparkles />
+				<SparklesIcon className="size-6" />
 				AI Insight
 			</Button>
 			<Dialog open={open} handler={handleOpen} size="xl">
 				<DialogHeader>
-					<Typography variant="h5" className="flex items-center gap-2">
-						<Sparkles />
+					<Typography variant="h5" className="flex items-center w-full gap-2">
+						<SparklesIcon className="size-6" />
 						AI Insight
 					</Typography>
 				</DialogHeader>

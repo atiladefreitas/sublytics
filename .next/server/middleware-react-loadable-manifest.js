@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{}"
+self.__REACT_LOADABLE_MANIFEST="{\"../components/charts/AreaChart.tsx -> react-apexcharts\":{\"id\":\"../components/charts/AreaChart.tsx -> react-apexcharts\",\"files\":[\"static/chunks/node_modules_pnpm_react-apexcharts_1_4_1_apexcharts_3_52_0_react_18_2_0_node_modules_react-ap-83657b.js\"]}}"
