@@ -1,14 +1,15 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import merge from "deepmerge";
+import { ApexOptions } from "apexcharts";
 
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 interface AreaChartProps {
 	height?: number;
-	series: object[];
+	series: ApexAxisChartSeries;
 	colors: string | string[];
-	options?: object;
+	options?: ApexOptions;
 }
 
 export function AreaChart({
@@ -17,14 +18,13 @@ export function AreaChart({
 	colors,
 	options,
 }: AreaChartProps) {
-	const chartOptions = React.useMemo(
-		() => ({
-			colors,
-			...merge(
+	const chartOptions: ApexOptions = React.useMemo(
+		() =>
+			merge(
 				{
 					chart: {
 						height: height,
-						type: "area",
+						type: "area" as const,
 						zoom: {
 							enabled: false,
 						},
@@ -32,11 +32,12 @@ export function AreaChart({
 							show: false,
 						},
 					},
+					colors: colors,
 					dataLabels: {
 						enabled: false,
 					},
 					stroke: {
-						curve: "smooth",
+						curve: "smooth" as const,
 						width: 2,
 					},
 					grid: {
@@ -54,7 +55,7 @@ export function AreaChart({
 						},
 					},
 					tooltip: {
-						theme: "light",
+						theme: "light" as const,
 					},
 					yaxis: {
 						labels: {
@@ -94,7 +95,6 @@ export function AreaChart({
 				},
 				options || {},
 			),
-		}),
 		[height, colors, options],
 	);
 
