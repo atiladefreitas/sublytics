@@ -9,7 +9,6 @@ interface AreaChartProps {
 	series: object[];
 	colors: string | string[];
 	options?: object;
-	darkMode?: boolean;
 }
 
 export function AreaChart({
@@ -17,7 +16,6 @@ export function AreaChart({
 	series,
 	colors,
 	options,
-	darkMode = false,
 }: AreaChartProps) {
 	const chartOptions = React.useMemo(
 		() => ({
@@ -33,7 +31,6 @@ export function AreaChart({
 						toolbar: {
 							show: false,
 						},
-						background: darkMode ? "#333" : "#ffffff",
 					},
 					dataLabels: {
 						enabled: false,
@@ -44,7 +41,7 @@ export function AreaChart({
 					},
 					grid: {
 						show: true,
-						borderColor: darkMode ? "#333333" : "#EEEEEE",
+						borderColor: "#EEEEEE",
 						strokeDashArray: 5,
 						xaxis: {
 							lines: {
@@ -57,12 +54,12 @@ export function AreaChart({
 						},
 					},
 					tooltip: {
-						theme: "dark",
+						theme: "light",
 					},
 					yaxis: {
 						labels: {
 							style: {
-								colors: "#eee",
+								colors: "#757575",
 								fontSize: "12px",
 								fontFamily: "inherit",
 								fontWeight: 300,
@@ -78,7 +75,7 @@ export function AreaChart({
 						},
 						labels: {
 							style: {
-								colors: "#eee",
+								colors: "#757575",
 								fontSize: "12px",
 								fontFamily: "inherit",
 								fontWeight: 300,
@@ -98,7 +95,7 @@ export function AreaChart({
 				options || {},
 			),
 		}),
-		[height, colors, options, darkMode],
+		[height, colors, options],
 	);
 
 	return (

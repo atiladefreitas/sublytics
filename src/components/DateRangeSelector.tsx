@@ -37,6 +37,7 @@ const DateRangeSelector: React.FC<DateRangeSelectorProps> = ({
 	return (
 		<form onSubmit={handleSubmit} className="w-[70%]  gap-2 flex">
 			<Input
+				label="Initial"
 				crossOrigin={""}
 				type="date"
 				value={startDate}
@@ -44,6 +45,7 @@ const DateRangeSelector: React.FC<DateRangeSelectorProps> = ({
 				className="h-[3rem] bg-white "
 			/>
 			<Input
+				label="End"
 				crossOrigin={""}
 				type="date"
 				value={endDate}
