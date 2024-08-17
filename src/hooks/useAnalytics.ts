@@ -18,11 +18,15 @@ export function useAnalytics() {
 
 	const { data, error } = useSWR("/api/analytics", fetcher, {
 		onSuccess: (data) => {
-			dispatch(setEngagementData(processEngagementData(data)));
+			console.log("Raw API Data:", data);
+			const processedEngagementData = processEngagementData(data);
+			console.log("Processed Engagement Data:", processedEngagementData);
+			dispatch(setEngagementData(processedEngagementData));
 			dispatch(setTopPerformingEditions(processTopPerformingEditions(data)));
 			dispatch(setLoading(false));
 		},
 		onError: (err) => {
+			console.error("API Error:", err);
 			dispatch(setError(err.message));
 			dispatch(setLoading(false));
 		},
