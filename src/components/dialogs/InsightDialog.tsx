@@ -31,7 +31,7 @@ export function InsightDialog() {
 				className="flex items-center gap-2"
 				size="md"
 			>
-				<SparklesIcon className="size-6" />
+				<SparklesIcon className="size-5" />
 				AI Insight
 			</Button>
 			<Dialog open={open} handler={handleOpen} size="xl">

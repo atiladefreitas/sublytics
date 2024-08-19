@@ -37,27 +37,35 @@ const DateRangeSelector: React.FC<DateRangeSelectorProps> = ({
 	return (
 		<form
 			onSubmit={handleSubmit}
-			className="w-full lg:w-[70%] gap-2 flex flex-col lg:flex-row mb-4"
+			className="w-full lg:w-[70%] gap-2 flex flex-col lg:flex-row mb-4 h-fit items-center"
 		>
-			<Input
-				label="Initial"
-				crossOrigin={""}
-				type="date"
-				value={startDate}
-				onChange={(e) => setStartDate(e.target.value)}
-				size="lg"
-				className="h-[3rem] bg-white"
-			/>
-			<Input
-				label="End"
-				crossOrigin={""}
-				type="date"
-				value={endDate}
-				onChange={(e) => setEndDate(e.target.value)}
-				size="lg"
-				className="h-[3rem] bg-white "
-			/>
-			<Button placeholder="apply button" size="md" type="submit" color="blue">
+			<div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-2">
+				<Input
+					label="Initial"
+					crossOrigin={""}
+					type="date"
+					value={startDate}
+					onChange={(e) => setStartDate(e.target.value)}
+					size="lg"
+					className=" bg-white"
+				/>
+				<Input
+					label="End"
+					crossOrigin={""}
+					type="date"
+					value={endDate}
+					onChange={(e) => setEndDate(e.target.value)}
+					size="lg"
+					className="bg-white "
+				/>
+			</div>
+			<Button
+				placeholder="apply button"
+				size="md"
+				type="submit"
+				color="blue"
+				className="h-fit lg:w-fit w-full"
+			>
 				Apply
 			</Button>
 		</form>
