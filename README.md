@@ -57,3 +57,16 @@ yarn dev
 # pnpm // recommended
 pnpm dev
 ```
+
+<details>
+<summary><h2>Written questions answers for DailyAI</h2></summary>
+
+1. How would you modify your solution to handle real-time updates for a large number of subscribers (e.g., 1 million+)? Consider both frontend and backend implications.
+   
+> For this, I would focus on optmize real time updates by using a state manager as Redux with React Query to ensure effiency in caching and real time updates. I also will use windowing technique to render only visible items aiming in reduce DOM nodes and improving performance, avoiding memory leaks and for avoid unnecessary re-renders and control update frequency is preferable the usage of WebSockets. Additionally, I would leverage Web Workers for heavy processing, keeping the main thread free for UI updates.
+
+2. Describe how you would measure and improve the performance of your application. What metrics would you focus on, and what techniques would you employ?
+
+> To measure and improve performance, i would focus on Core Web Vitals metric such as LCP, FID and CLS, using tools such Lighthouse, Chrome devtools and by implementing real time monitoring with Google Analytics, these metrics can be optmized by code splitting techniques with React.lazy and Suspense, optimizing the crtical rendering path and prioritizing resources, as well dynamic imports, and efficient dependency management. In addition, I would integrate a performance monitoring system into the CI/CD pipeline to detect regressions early, and perform regular performance, accessibility, and cross-browser compatibility audits to ensure consistent performance across different devices and browsers. Browserstack, New Relic or Datadog can be good choices for every day monitoring.
+
+</details>
