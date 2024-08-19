@@ -1,4 +1,4 @@
-# Sublytics
+# [Sublytics](https://sublytics.vercel.app/)
 
 Sublytics is an AI-powered newsletter analytics dashboard with Next.js 14+, visualizing engagement metrics, top-performing content, and responsive design for small business owners.
 
