@@ -1,38 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sublytics
 
-## Getting Started
+Sublytics is an AI-powered newsletter analytics dashboard with Next.js 14+, visualizing engagement metrics, top-performing content, and responsive design for small business owners.
 
-First, run the development server:
+## About
 
+This project was developed Using NextJS empowered with Typescript and TailwindCSS.
+
+Here is some tools used on the UI development:
+
+- [Material Tailwind](https://www.material-tailwind.com/) for stunning ui components
+- [Apexcharts](https://apexcharts.com/) for breathtaking charts
+- [Framer Motion](https://www.framer.com/motion/) for blazing cool and modern animations
+- [JEST](https://jestjs.io/pt-BR/) for powerful unit testing
+
+## Features
+
+- **Next.js 14+ with App Router and TypeScript**: Utilizes the latest Next.js features for optimal performance and developer experience.
+- **Redux State Management**: Efficient state management across the application.
+- **Responsive Design**: Ensures a seamless experience across desktop and mobile devices.
+- **Date Range Selection**: Allows users to filter data based on custom date ranges.
+- **Engagement Overview**: Displays a chart combining open rates and click-through rates over time.
+- **Newsletter Performance Table**: Lists all newsletters within the selected date range, showing individual performance metrics.
+- **API Integration**: Includes a mock API route that serves analytics data for demonstration purposes.
+- **Data Processing**: Implements a data processing layer that transforms raw data into a format suitable for visualization.
+- **Loading States**: Implements loading states for components while data is being fetched.
+- **Unit Testing**: Includes unit tests for data processing logic using Jest.
+
+## Running locally
+*This project was built using `pnpm` but felt free to use the package manager you are comfortable with.*
+
+#### Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+git clone git@github.com:atiladefreitas/sublytics.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Install the dependencies
+```bash
+# npm
+npm install
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+# yarn
+yarn install
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+# pnpm // recommended
+pnpm install
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+#### Run the project
+```bash
+# npm
+npm run dev
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+# yarn
+yarn dev
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# pnpm // recommended
+pnpm dev
+```
